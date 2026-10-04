@@ -46,7 +46,6 @@ Khan-Imperial-Bank/
 
 # 🇷🇺 Русская версия
 
-```markdown
 # Khan Imperial Bank — Ядро банковской системы 🏦
 
 ## 🌟 Обзор проекта
