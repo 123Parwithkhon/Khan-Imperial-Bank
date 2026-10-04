@@ -1,194 +1,91 @@
-# Khan Imperial Bank
+# Khan Imperial Bank — Core Banking System 🏦
 
-A relational database project for a fictional banking system, developed using Microsoft SQL Server.
+## 🌟 Project Overview
 
-The project demonstrates database design, SQL programming, data management, relationships between entities, and analytical queries for banking operations.
+**Khan Imperial Bank** is a relational banking database project developed using Microsoft SQL Server and T-SQL.
 
----
+The project models the core data structures and business processes of a banking system, including multi-currency accounts, transactions, loans, audit logging, fraud monitoring, and branch management.
 
-## 📌 Project Overview
-
-**Khan Imperial Bank** is an educational banking database project designed to simulate the core data structures and operations of a banking system.
-
-The database contains information about:
-
-- Clients
-- Bank accounts
-- Cards
-- Transactions
-- Loans
-- Branches
-- Currencies
-- Fraud detection
-- Employees
-- Statuses
-- Entity types
-- Audit logs
-
-The main goal of the project is to practice relational database design and advanced SQL queries using a realistic business domain.
+The main goal of the project is to demonstrate practical skills in database design, SQL development, data integrity, and financial data analysis.
 
 ---
 
-## 🎯 Project Goals
+## 🏗 Key Architecture Features
 
-The project was created to practice:
-
-- Relational database design
-- Primary and foreign keys
-- Table relationships
-- Data integrity and constraints
-- SQL queries
-- Aggregations and grouping
-- JOIN operations
-- Subqueries
-- Common Table Expressions (CTEs)
-- Views
-- Indexes
-- Transactions
-- Stored procedures
-- Triggers
-- Database normalization
-- Financial data analysis
-- Fraud-related data analysis
+- **3NF Database Design** — Data is structured according to relational database principles to reduce redundancy and maintain data consistency.
+- **Centralized Status Management** — A unified system of status reference data is used for different entities such as accounts, employees, and loans.
+- **Multi-Currency Support** — Centralized currency management with exchange-rate information.
+- **Audit & Security** — Audit logs are used to track changes, while a dedicated fraud log stores information about suspicious transactions.
 
 ---
 
-## 🛠 Technologies
+## 📊 Business Problems Solved
 
-- **Microsoft SQL Server**
-- **T-SQL**
-- Relational Database Design
-- SQL Server Management Studio (SSMS)
+The repository contains SQL solutions for several banking-related tasks:
 
----
-
-## 🗄 Database Structure
-
-The database is organized around several core entities.
-
-### Main entities
-
-| Entity | Description |
-|---|---|
-| Clients | Customer information |
-| Accounts | Bank accounts and balances |
-| Cards | Cards connected to bank accounts |
-| Transactions | Transfers and other account operations |
-| Loans | Customer loans |
-| Branches | Bank branches |
-| Currencies | Supported currencies and exchange rates |
-| FraudLog | Suspicious transaction records |
-| Employees | Bank employees |
-| AuditLogs | Changes made to important entities |
-
-The database uses primary and foreign keys to maintain relationships between entities.
+1. **Security Audit** — Identifying suspicious transactions and analyzing employee-related actions.
+2. **Credit Analytics** — Analyzing loans, payments, and overdue debt.
+3. **Financial Reporting** — Analyzing branch balances and segmenting clients based on account balances.
+4. **Data Integrity** — Using primary keys, foreign keys, constraints, and relationships to maintain consistent financial data.
 
 ---
 
-## 🔗 Main Relationships
-
-Examples of relationships in the database:
-
-- A client can have multiple accounts.
-- An account can have multiple cards.
-- Accounts are connected to bank branches.
-- Transactions can reference source and destination accounts.
-- Loans belong to clients and branches.
-- Transactions can be associated with employees.
-- Fraud records are linked to transactions.
-- Accounts and loans use predefined statuses and entity types.
-- Accounts reference currencies through `CurrencyID`.
-
----
-
-## 📊 Analytics
-
-The project includes analytical SQL queries for different banking scenarios.
-
-Examples include:
-
-### Account analysis
-
-- Displaying client accounts and balances
-- Calculating balances by currency
-- Categorizing customers based on account balance
-- Finding accounts connected to specific branches
-
-### Transaction analysis
-
-- Counting transactions
-- Calculating transaction amounts
-- Analyzing transfers between accounts
-- Finding clients with high transaction volumes
-
-### Loan analysis
-
-- Calculating loan-related information
-- Analyzing loan payments
-- Identifying overdue loans
-
-### Fraud analysis
-
-- Finding suspicious transactions
-- Displaying fraud risk levels
-- Connecting suspicious transactions with clients, accounts and employees
-
-### Branch analysis
-
-- Analyzing account balances by branch
-- Comparing banking activity between branches
-
----
-
-## 🧠 SQL Concepts Demonstrated
-
-This project demonstrates practical usage of:
+## 📁 Project Structure
 
 ```text
-SELECT
-WHERE
-JOIN
-GROUP BY
-HAVING
-ORDER BY
-CASE
-Subqueries
-CTE
-Views
-Indexes
-Transactions
-Stored Procedures
-Triggers
-Constraints
-Primary Keys
-Foreign Keys
-Normalization
+Khan-Imperial-Bank/
+│
+├── create_KhanImperialBank.sql
+├── inserts_KhanImperialBank.sql
+├── analytics_KhanImperialBank.sql
+├── Khan_Imperial_Bank_ERD.png
+└── README.md
+```
 
-# Khan Imperial Bank — Enterprise Core Banking System 🏦
+---
+
+# 🇷🇺 Русская версия
+
+```markdown
+# Khan Imperial Bank — Ядро банковской системы 🏦
 
 ## 🌟 Обзор проекта
-**Khan Imperial Bank** — это комплексная модель ядра банковской системы, разработанная на MS SQL Server. Проект демонстрирует архитектуру масштабируемого банка с поддержкой мультивалютности, многоуровневого аудита, системы антифрода и управления кредитным портфелем.
+
+**Khan Imperial Bank** — это реляционный проект банковской базы данных, разработанный с использованием Microsoft SQL Server и T-SQL.
+
+Проект моделирует основные структуры данных и бизнес-процессы банковской системы, включая мультивалютные счета, транзакции, кредиты, аудит изменений, мониторинг мошенничества и управление филиалами.
+
+Основная цель проекта — продемонстрировать практические навыки проектирования баз данных, разработки SQL-запросов, обеспечения целостности данных и финансовой аналитики.
+
+---
 
 ## 🏗 Ключевые особенности архитектуры
-- **Нормализация 3NF**: Данные организованы в соответствии с лучшими практиками для минимизации дублирования.
-- **Enterprise Status Management**: Единая система справочников статусов для всех сущностей (счета, сотрудники, кредиты).
-- **Multi-Currency Engine**: Централизованное управление валютами и курсами для мгновенного расчета ликвидности.
-- **Deep Audit & Security**: Полное логирование изменений (`AuditLogs`) и специализированный модуль для отслеживания подозрительных операций (`FraudLog`).
 
-## 📊 Решенные бизнес-задачи
-В репозитории представлены SQL-решения для следующих задач:
-1. **Security Audit**: Поиск «следа мошенника» и аудит действий сотрудников.
-2. **Credit Analytics**: Мониторинг просроченной задолженности и расчет длительности просрочки.
-3. **Financial Reporting**: Отчеты по ликвидности филиалов и сегментация клиентов по категориям (VIP/Standard).
-4. **Data Integrity**: Использование Foreign Keys и Constraints для обеспечения финансовой точности.
+- **Проектирование базы данных в 3НФ** — данные организованы в соответствии с принципами реляционных баз данных для уменьшения избыточности и повышения согласованности данных.
+- **Централизованное управление статусами** — единая система справочных статусов используется для различных сущностей, включая счета, сотрудников и кредиты.
+- **Поддержка мультивалютности** — централизованное управление валютами и информацией о курсах обмена.
+- **Аудит и безопасность** — журнал аудита используется для отслеживания изменений, а отдельный журнал мошенничества хранит информацию о подозрительных транзакциях.
+
+---
+
+## 📊 Решаемые бизнес-задачи
+
+В репозитории представлены SQL-решения для следующих банковских задач:
+
+1. **Security Audit** — поиск подозрительных транзакций и анализ действий сотрудников.
+2. **Credit Analytics** — анализ кредитов, платежей и просроченной задолженности.
+3. **Financial Reporting** — анализ балансов филиалов и сегментация клиентов на основе размера баланса.
+4. **Data Integrity** — использование первичных и внешних ключей, ограничений и связей для обеспечения целостности финансовых данных.
+
+---
 
 ## 📁 Структура проекта
-- `create_KhanImperialBank.sql` — Схема базы данных (DDL).
-- `inserts_KhanImperialBank.sql` — Тестовые данные для симуляции банковской активности (DML).
-- `analytics_KhanImperialBank.sql` — Аналитические запросы и отчеты.
-- `Khan_Imperial_Bank_ERD.png` — Визуальная диаграмма связей (ER-диаграмма).
 
-## 🛠 Технологии
-- MS SQL Server / T-SQL
-- Database Design & Modeling
-- Security Auditing
+```text
+Khan-Imperial-Bank/
+│
+├── create_KhanImperialBank.sql
+├── inserts_KhanImperialBank.sql
+├── analytics_KhanImperialBank.sql
+├── Khan_Imperial_Bank_ERD.png
+└── README.md
